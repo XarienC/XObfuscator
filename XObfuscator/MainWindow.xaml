@@ -1,0 +1,53 @@
+﻿<ui:FluentWindow x:Class="XObfuscator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:XObfuscator"
+        mc:Ignorable="d"
+        Title="XObfuscator"
+        ResizeMode="NoResize"
+        Height="509" 
+        Width="818"
+        Background="{ui:ThemeResource ApplicationBackgroundBrush}"
+        ExtendsContentIntoTitleBar="True"
+        WindowBackdropType="Mica"
+        WindowCornerPreference="Round"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <ui:TitleBar Title="XObfuscator" CanMaximize="False"/>
+
+        <Label x:Name="SelectExecLabel" Content="Select .NET Executable/DLL" HorizontalAlignment="Left" Margin="45,54,0,0" VerticalAlignment="Top"/>
+        <ui:TextBox x:Name="EXEPathTB" Margin="45,82,169,0" TextWrapping="Wrap" PlaceholderText="..." IsReadOnly="True" VerticalAlignment="Top"/>
+        <Button x:Name="SelectEXEButton" Content="..." Margin="654,82,0,0" VerticalAlignment="Top" Width="124" Height="36" Click="SelectEXEButton_Click"/>
+
+        <Label x:Name="LocationLabel" Content="Select Output Location (Optional)" HorizontalAlignment="Left" Margin="45,153,0,0" VerticalAlignment="Top"/>
+        <ui:TextBox x:Name="OutputLocationTB" IsEnabled="False" Margin="45,181,169,0" TextWrapping="Wrap" PlaceholderText="..." IsReadOnly="True" VerticalAlignment="Top"/>
+        <Button x:Name="SelectOutputLocationButton" IsEnabled="False" Content="..." Margin="654,181,0,0" VerticalAlignment="Top" Width="124" Height="36" Click="SelectOutputLocationButton_Click"/>
+        <CheckBox x:Name="OutputLocationToggle" Content="Custom Output" Margin="45,128,0,0" Height="0" VerticalAlignment="Top" Checked="OutputLocationToggle_Checked" Unchecked="OutputLocationToggle_Unchecked"/>
+
+        <Button x:Name="ObfuscateButton" Content="Obfuscate!" Margin="654,432,0,0" VerticalAlignment="Top" Width="124" Height="36" Click="ObfuscateButton_Click"/>
+
+        <Label x:Name="ObfuscationOptionsLabel" Content="Obfuscation Options" HorizontalAlignment="Left" Margin="45,238,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="RenameToggle" Content="Rename Protection" Margin="45,268,0,0" Height="0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="IntProtectionToggle" Content="Integer Protection" Margin="45,300,0,0" Height="0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="FakeAttribToggle" Content="Fake Attributes" Margin="45,365,0,0" Height="0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="Local2FieldToggle" Content="Local2Field" Margin="219,365,0,0" Height="0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="ProxyIntToggle" Content="Proxy Int" Margin="401,332,0,0" Height="0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="ProxyStringToggle" Content="Proxy String" Margin="401,365,0,0" Height="0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="ProxyManyToggle" Content="Many Proxy" Margin="401,397,0,0" Height="0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="ControlFlowToggle" Content="Control Flow" Margin="45,332,0,0" Height="0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="JunkAdderToggle" Content="Junk Code Insertion" Margin="219,300,0,0" Height="0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="FakeMethodCallToggle" Content="Fake Method Calls" Margin="219,268,0,0" Height="0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="WatermarkToggle" Content="Watermark" Margin="45,397,0,0" Height="0" VerticalAlignment="Top" Checked="WatermarkToggle_Checked" Unchecked="WatermarkToggle_Unchecked"/>
+        <ui:TextBox x:Name="WatermarkTB" IsEnabled="False" Margin="45,432,174,0" TextWrapping="Wrap" PlaceholderText="..." VerticalAlignment="Top"/>
+        <CheckBox x:Name="OpaquePredicatesToggle" Content="Opaque Predicates" Margin="219,332,0,0" Height="0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="FieldEncapToggle" Content="Field Encapsulation" Margin="219,397,0,0" Height="0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SpoofAssemblyToggle" Content="Spoof Assembly Info" Margin="401,300,0,0" Height="0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="StackProtectionToggle" Content="Stack Obfuscation" Margin="401,267,0,0" Height="0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="AntiDnSpyToggle" Content="Anti DnSpy" Margin="584,268,0,0" Height="0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="AntiDe4DotToggle" Content="Anti De4Dot" Margin="584,300,0,0" Height="0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="AntiIldasmToggle" Content="Anti Ildasm" Margin="584,332,0,0" Height="0" VerticalAlignment="Top"/>
+    </Grid>
+</ui:FluentWindow>
